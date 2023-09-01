@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title> Cards Slider</title>
+  <link rel="stylesheet" href="slide.css">
+
+</head>
+<body>
+<h1 class="title">Most Rated One Piece Arcs</h1>
+<div class="slider" x-data="{start: true, end: false}">
+  <div class="slider__content" x-ref="slider" x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
+    <div class="slider__item">
+      <img class="slider__image" src="https://i.imgur.com/0prwGzE.png" alt="Image">
+      <div class="slider__info">
+        <h2>One Piece Wano Arc</h2>
+      </div>
+    </div>
+    <div class="slider__item">
+      <img class="slider__image" src="https://i.imgur.com/sSXg3jY.png" alt="Image">
+      <div class="slider__info">
+        <h2>One Piece Marine Ford Arc</h2>
+      </div>
+    </div>
+    <div class="slider__item">
+      <img class="slider__image" src="https://i.imgur.com/SIYXd1a.png" alt="Image">
+      <div class="slider__info">
+        <h2>One Piece Thriller Bark Arc</h2>
+      </div>
+    </div>
+    <div class="slider__item">
+      <img class="slider__image" src="https://i.imgur.com/9wruCWQ.png" alt="Image">
+      <div class="slider__info">
+        <h2>One Piece Arlong Park Arc</h2>
+      </div>
+    </div>
+    <div class="slider__item">
+      <img class="slider__image" src="https://i.imgur.com/6JZPK2J.png" alt="Image">
+      <div class="slider__info">
+        <h2>One Piece Water 7 Arc</h2>
+      </div>
+    </div>
+    <div class="slider__item">
+      <img class="slider__image" src="https://i.imgur.com/haX21IW.png" alt="Image">
+      <div class="slider__info">
+        <h2>One Piece The Enies Lobby Arc</h2>
+      </div>
+    </div>
+    <div class="slider__item">
+      <img class="slider__image" src="https://i.imgur.com/VSLH35p.png" alt="Image">
+      <div class="slider__info">
+        <h2>One Piece Dressrosa Arc</h2>
+      </div>
+    </div>
+    <div class="slider__item">
+      <img class="slider__image" src="https://i.imgur.com/iYeiYbP.png" alt="Image">
+      <div class="slider__info">
+        <h2>One Piece Whole Cake Island Arc</h2>
+      </div>
+    </div>
+    <div class="slider__item">
+      <img class="slider__image" src="https://i.imgur.com/1fdFWkM.jpg" alt="Image">
+      <div class="slider__info">
+        <h2>One Piece Fishman Island Arc</h2>
+      </div>
+    </div>
+    <div class="slider__item">
+      <img class="slider__image" src="https://imgur.com/OIbs9Dl.jpg" alt="Image">
+      <div class="slider__info">
+        <h2>One Piece Alabasta Arc</h2>
+      </div>
+    </div>
+    <div class="slider__item">
+      <img class="slider__image" src="https://imgur.com/fa5geqq.jpg" alt="Image">
+      <div class="slider__info">
+        <h2>One piece Amazon Lily Arc</h2>
+      </div>
+    </div>
+  </div>
+  <div class="slider__nav">
+    <button class="slider__nav__button" x-on:click="$refs.slider.scrollBy({left: $refs.slider.offsetWidth * -1, behavior: 'smooth'});" x-bind:class="start ? '' : 'slider__nav__button--active'">Previous</button>
+    <button class="slider__nav__button" x-on:click="$refs.slider.scrollBy({left: $refs.slider.offsetWidth, behavior: 'smooth'});" x-bind:class="end ? '' : 'slider__nav__button--active'">Next</button>
+  </div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js'></script><script  src="slide.js"></script>
+
+</body>
+</html>
